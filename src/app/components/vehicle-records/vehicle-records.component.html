@@ -3,6 +3,7 @@
     <table>
       <thead>
         <tr>
+          <th>Id</th>
           <th>Marca</th>
           <th>Modelo</th>
           <th>Tipo de Vehiculo</th>
@@ -16,6 +17,7 @@
       <tbody>
           @for (item of vehicleList; track $index) {
             <tr>
+              <td>{{item.id}}</td>
               <td>{{item.marca}}</td>
               <td>{{item.modelo}}</td>
               <td>{{item.tipoVehiculo}}</td>

@@ -15,7 +15,7 @@ import { VehicleDetailsInterface } from '../../interfaces/vehicleDetails.interfa
 export class VehicleRecordsComponent implements  OnInit{
 
   vehicleList: VehicleInterface[] = [];
-  vehicleDetails: VehicleDetailsInterface[] | null= [];
+  vehicleDetails: VehicleDetailsInterface[] = [];
   isModalOpen: boolean = false;
 
 
@@ -39,12 +39,10 @@ export class VehicleRecordsComponent implements  OnInit{
     this.vehicleService.getVehicles().subscribe({
       next: (result) => {
         const vehicle = result.data.rows.find((item: VehicleInterface) => item.id === id);
-        console.log('data', vehicle.detalle)
         if (vehicle) {
           this.vehicleDetails = vehicle.detalle;
+          console.log('vehicleDetails', this.vehicleDetails)
           this.isModalOpen = true; 
-        } else {
-          this.vehicleDetails = null;
         }
       },
       error: (err) => {

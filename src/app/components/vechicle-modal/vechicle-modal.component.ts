@@ -13,18 +13,12 @@ import { VehicleDetailsInterface } from '../../interfaces/vehicleDetails.interfa
 })
 export class VechicleModalComponent{
 
-  @Input() detail: any;
+  @Input() detail: VehicleDetailsInterface[] = [];
   @Input() isModalOpen: boolean = false;
   @Output() close = new EventEmitter<void>();
 
   closeModal() {
     this.close.emit();
   }
-
-  ngOnInit(): void {
-    // Imprimir en consola cuando se inicializa el componente
-    console.log('Detail on init:', this.detail);
-  }
-
 
 }

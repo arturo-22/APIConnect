@@ -11,13 +11,13 @@
         </tr>
       </thead>
       <tbody>
-        <!-- @for (item of detail; track $index) { -->
+        @for (item of detail; track $index) {
         <tr>
-          <td>{{ detail.nombre }}</td>
-          <td>{{ detail.atributo }}</td>
-          <!-- <td>{{ detail.valor }}</td> -->
-          <!-- } -->
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.atributo }}</td>
+          <td>{{ item.valor }}</td>
         </tr>
+        }
       </tbody>
     </table>
     <button (click)="closeModal()">Cerrar</button>
