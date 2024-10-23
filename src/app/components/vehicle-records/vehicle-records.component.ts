@@ -20,6 +20,7 @@ export class VehicleRecordsComponent implements  OnInit{
 
 
   constructor(private vehicleService: VehicleService, private router: Router){}
+
   ngOnInit(): void {
     this.getVehicles()
   } 
@@ -41,7 +42,6 @@ export class VehicleRecordsComponent implements  OnInit{
         const vehicle = result.data.rows.find((item: VehicleInterface) => item.id === id);
         if (vehicle) {
           this.vehicleDetails = vehicle.detalle;
-          console.log('vehicleDetails', this.vehicleDetails)
           this.isModalOpen = true; 
         }
       },
