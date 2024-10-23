@@ -1,0 +1,26 @@
+@if(isModalOpen){
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h1>Details</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>nombre</th>
+          <th>atributo</th>
+          <th>valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- @for (item of detail; track $index) { -->
+        <tr>
+          <td>{{ detail.nombre }}</td>
+          <td>{{ detail.atributo }}</td>
+          <!-- <td>{{ detail.valor }}</td> -->
+          <!-- } -->
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
+</div>
+}

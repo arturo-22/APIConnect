@@ -1,0 +1,35 @@
+<div>
+    <h1> Registros Vehicular</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Tipo de Vehiculo</th>
+          <th>VIN</th>
+          <th>Estado</th>
+          <th>Fecha</th>
+          <th>Modelo Básico</th>
+          <th>Detalle</th>
+        </tr>
+      </thead>
+      <tbody>
+          @for (item of vehicleList; track $index) {
+            <tr>
+              <td>{{item.marca}}</td>
+              <td>{{item.modelo}}</td>
+              <td>{{item.tipoVehiculo}}</td>
+              <td>{{item.vin}}</td>
+              <td>{{item.estado}}</td>
+              <td>{{item.fecha}}</td>
+              <td>{{item.modelo_basico}}</td>
+              <td>
+                <button (click)="navigateToDetail(item.id)">Ver</button>
+              </td>
+            </tr>
+          }
+      </tbody>
+    </table>
+  </div>
+
+  <app-vechicle-modal [detail]="vehicleDetails" [isModalOpen]="isModalOpen" (close)="closeModal()"></app-vechicle-modal>
